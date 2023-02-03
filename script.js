@@ -1,19 +1,33 @@
 let titleInput = document.getElementById('title');
 let authorInput = document.getElementById('author');
 let pagesInput = document.getElementById('pages');
-let statusInput = document.getElementById('status');
-let newTitle = titleInput.value;
-let newAuthor = authorInput.value;
-let newPages = pagesInput.value;
+let trueInput = document.getElementById('true');
+let falseInput = document.getElementById('false');
+let submitBtn = document.getElementById('submit');
 let myLibrary = [];
-const prueba = new Book(newTitle, newAuthor, newPages) //pasarla por un event listener
-addBookToLibrary(prueba)
+
+submitBtn.addEventListener('click', submitClick) 
+
+function checkedStatus (){
+
+}
+
+function submitClick(event){ 
+    let newTitle = titleInput.value;
+    let newAuthor = authorInput.value;
+    let newPages = pagesInput.value;
+    const prueba = new Book(newTitle, newAuthor, newPages); 
+    addBookToLibrary(prueba); 
+    event.preventDefault()
+}
+
 
 
 
 function addBookToLibrary(book){ 
     myLibrary.push(book)
 };
+
 
 function Book(title, author, pages){
     this.title = title
