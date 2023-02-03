@@ -1,0 +1,17 @@
+.open-button{
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.form-popup {
+    display: none; 
+    
+}
+.form-container{
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}

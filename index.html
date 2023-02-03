@@ -9,35 +9,34 @@
     
 </head>
 <body>
+<button class="open-button" id="addBook">Add Book</button>
 
-    <form action="">
-        <h2>Book information</h2>
-        <div>
-            <label for="title">Title: </label>
-            <input type="text" name="title" id="title">
-        </div>
-
-        <div>
-            <label for="author">Author: </label>
-            <input type="text" name="author" id="author">
-        </div>
+    <div class="form-popup" id="myForm">
+        <form action="" class="form-container">
+            <h2>Book information</h2>
+            <div>
+                <label for="title">Title: </label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div>
+                <label for="author">Author: </label>
+                <input type="text" name="author" id="author" required>
+            </div>
         
-        <div>
-            <label for="pages">Pages: </label>
-            <input type="number" name="pages" id="pages">
-        </div>
-
-        <div>
-            <h3>Have you read it?</h3>
-
-            <label for="true">Yes</label>
-            <input type="radio" name="status" id="true" checked>
-
-            <label for="false">No</label>
-            <input type="radio" name="status" id="false">
-        </div>
-        <button type="submit" id="submit">Submit</button>
-    </form>
+            <div>
+                <label for="pages">Pages: </label>
+                <input type="number" name="pages" id="pages" minlength="1" maxlength="10000" required>
+            </div>
+            <div>
+                <h3>Have you read it?</h3>
+                <label for="true">Yes</label>
+                <input type="radio" name="status" id="true" checked>
+                <label for="false">No</label>
+                <input type="radio" name="status" id="false">
+            </div>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>
