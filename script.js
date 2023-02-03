@@ -1,33 +1,39 @@
-let myLibrary = []; //array que va a guardar lista de libros
-const theHobbit = new Book('The Hobbit', 'J.R.R Tolkein', '295', true);
-const Berserk = new Book('Berserk', 'Kentaro Miura', '9500', true);
+let titleInput = document.getElementById('title');
+let authorInput = document.getElementById('author');
+let pagesInput = document.getElementById('pages');
+let statusInput = document.getElementById('status');
+let newTitle = titleInput.value;
+let newAuthor = authorInput.value;
+let newPages = pagesInput.value;
+let myLibrary = [];
+const prueba = new Book(newTitle, newAuthor, newPages) //pasarla por un event listener
+addBookToLibrary(prueba)
 
 
 
-myLibrary.forEach(console.table);
-
-
-
-function addBookToLibrary(book){ //funcion que va a agregar a myLibrary
+function addBookToLibrary(book){ 
     myLibrary.push(book)
 };
-addBookToLibrary(Berserk);
-addBookToLibrary(theHobbit);
 
-
-function Book(title, author, pages, readStatus){
+function Book(title, author, pages){
     this.title = title
     this.author = author
     this.pages = pages
-    this.readStatus = readStatus
 };
 
 
+// readStatus
+// this.readStatus = readStatus
 
 
 // Book.prototype.info = function() {
 //     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.readStatus ? 'already read' : 'not read yet'}`
 // }
+
+// const theHobbit = new Book('The Hobbit', 'J.R.R Tolkein', '295', true);
+// const Berserk = new Book('Berserk', 'Kentaro Miura', '9500', true);
+// addBookToLibrary(Berserk);
+// addBookToLibrary(theHobbit);
 
 //aparece el formulario con el boton "add book"
 // al picar send se crean variables por cada elemento del formulario
