@@ -5,6 +5,7 @@ let trueInput = document.getElementById('true');
 let falseInput = document.getElementById('false');
 let submitBtn = document.getElementById('submit');
 let addBtn = document.getElementById('addBook');
+const container = document.getElementById('container');
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkein', '295', true);
 const Berserk = new Book('Berserk', 'Kentaro Miura', '9500', true);
@@ -30,22 +31,30 @@ function submitClick(event){
     if (newTitle === '' || newAuthor === '' || newPages === ''){  
         return
     } else { 
+    container.innerHTML = "";
     const bookForm = new Book(newTitle, newAuthor, newPages); 
     addBookToLibrary(bookForm); 
+    createCards();
     event.preventDefault();
     closeForm();
     };
 };
+function createCards(){ 
 
+}
 myLibrary.forEach(book =>{
-    let cardTitle = document.createElement('div');
-    document.body.appendChild(cardTitle);
-    cardTitle.textContent = book.title;
+    let cardsContainer = document.createElement('div');
     let cardAuthor = document.createElement('div');
-    document.body.appendChild(cardAuthor);
-    cardAuthor.textContent = book.author;
+    let cardTitle = document.createElement('div');
     let cardPages = document.createElement('div');
-    document.body.appendChild(cardPages);
+    container.appendChild(cardsContainer);
+    cardsContainer.appendChild(cardAuthor);
+    cardsContainer.appendChild(cardTitle);
+    cardsContainer.appendChild(cardPages);
+    cardAuthor.classList.add('card');
+    cardsContainer.classList.add('cardsContainer')
+    cardAuthor.textContent = book.author;
+    cardTitle.textContent = book.title;
     cardPages.textContent = book.pages;
 })
 
@@ -78,8 +87,6 @@ function Book(title, author, pages){
 
 // hace una copia del titulo y lo modifica para que sea camelCase
 //crea una const CamelCase = new Book (pone aqui las variables, 3 string y 1 boolean)
-
 //Loop que da -estilo- a cada elemento del array
-
 //boton para eliminar del array
  
