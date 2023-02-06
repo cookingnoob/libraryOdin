@@ -8,13 +8,18 @@ let addBtn = document.getElementById('addBook');
 const container = document.getElementById('container');
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkein', '295', true);
-const Berserk = new Book('Berserk', 'Kentaro Miura', '9500', true);
+const berserk = new Book('Berserk', 'Kentaro Miura', '9500', true);
+const tao = new Book ('Tao', 'Alan Watts', '131');
 let myLibrary = [];
 
 
 
-addBookToLibrary(Berserk);
+addBookToLibrary(berserk);
 addBookToLibrary(theHobbit);
+addBookToLibrary(tao);
+addBookToLibrary(berserk);
+addBookToLibrary(theHobbit);
+addBookToLibrary(tao);
 
 
 submitBtn.addEventListener('click', submitClick);
@@ -39,24 +44,29 @@ function submitClick(event){
     closeForm();
     };
 };
-function createCards(){ 
 
+
+function createCards(){ 
+    myLibrary.forEach(book =>{
+        let cardsContainer = document.createElement('div');
+        let cardAuthor = document.createElement('div');
+        let cardTitle = document.createElement('div');
+        let cardPages = document.createElement('div');
+        container.appendChild(cardsContainer);
+        cardsContainer.appendChild(cardAuthor);
+        cardsContainer.appendChild(cardTitle);
+        cardsContainer.appendChild(cardPages);
+        cardsContainer.classList.add('cardsContainer');
+        cardAuthor.classList.add('card');
+        cardTitle.classList.add('card');
+        cardPages.classList.add('card');
+        cardAuthor.textContent = `Author: ${book.author}`;
+        cardTitle.textContent = `Title: ${book.title}`;
+        cardPages.textContent = `Number of pages: ${book.pages}`;
+    })
 }
-myLibrary.forEach(book =>{
-    let cardsContainer = document.createElement('div');
-    let cardAuthor = document.createElement('div');
-    let cardTitle = document.createElement('div');
-    let cardPages = document.createElement('div');
-    container.appendChild(cardsContainer);
-    cardsContainer.appendChild(cardAuthor);
-    cardsContainer.appendChild(cardTitle);
-    cardsContainer.appendChild(cardPages);
-    cardAuthor.classList.add('card');
-    cardsContainer.classList.add('cardsContainer')
-    cardAuthor.textContent = book.author;
-    cardTitle.textContent = book.title;
-    cardPages.textContent = book.pages;
-})
+
+
 
 function openForm(){
     document.getElementById("myForm").style.display = "block";
@@ -85,8 +95,5 @@ function Book(title, author, pages){
 
 
 
-// hace una copia del titulo y lo modifica para que sea camelCase
-//crea una const CamelCase = new Book (pone aqui las variables, 3 string y 1 boolean)
-//Loop que da -estilo- a cada elemento del array
 //boton para eliminar del array
  
