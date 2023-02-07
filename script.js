@@ -45,11 +45,6 @@ function submitClick(event){
     };
 };
 
-
-function createCards(){ 
-   
-}
-
 myLibrary.forEach(book =>{
     let cardsContainer = document.createElement('div');
     let cardAuthor = document.createElement('div');
@@ -64,29 +59,37 @@ myLibrary.forEach(book =>{
     cardsContainer.appendChild(statusBtn);
     cardsContainer.appendChild(deleteBtn);
     cardsContainer.classList.add('cardsContainer');
-    cardAuthor.classList.add('card');
-    cardTitle.classList.add('card');
-    cardPages.classList.add('card');
+    cardAuthor.classList.add('author');
+    cardTitle.classList.add('title');
+    cardPages.classList.add('pages');
     statusBtn.classList.add('statusBtn');
     deleteBtn.classList.add('deleteBtn');
     cardAuthor.textContent = `Author: ${book.author}`;
     cardTitle.textContent = `Title: ${book.title}`;
     cardPages.textContent = `Number of pages: ${book.pages}`;
     statusBtn.textContent = 'Read status';
-    deleteBtn.textContent = 'Delete'
+    deleteBtn.textContent = 'Delete';
 })
 
-function openForm(){
-    document.getElementById("myForm").style.display = "block";
-};
+function createCards(){ 
+    
+}
 
-function closeForm(){
-    document.getElementById('myForm').style.display = "none";
-};
 
 function addBookToLibrary(book){ 
     myLibrary.push(book)
 };
+
+function openForm(){
+    document.getElementById("myForm").style.display = "block";
+};
+function closeForm(){
+    document.getElementById('myForm').style.display = "none";
+};
+
+
+
+
 
 function Book(title, author, pages){
     this.title = title
