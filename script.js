@@ -47,26 +47,34 @@ function submitClick(event){
 
 
 function createCards(){ 
-    myLibrary.forEach(book =>{
-        let cardsContainer = document.createElement('div');
-        let cardAuthor = document.createElement('div');
-        let cardTitle = document.createElement('div');
-        let cardPages = document.createElement('div');
-        container.appendChild(cardsContainer);
-        cardsContainer.appendChild(cardAuthor);
-        cardsContainer.appendChild(cardTitle);
-        cardsContainer.appendChild(cardPages);
-        cardsContainer.classList.add('cardsContainer');
-        cardAuthor.classList.add('card');
-        cardTitle.classList.add('card');
-        cardPages.classList.add('card');
-        cardAuthor.textContent = `Author: ${book.author}`;
-        cardTitle.textContent = `Title: ${book.title}`;
-        cardPages.textContent = `Number of pages: ${book.pages}`;
-    })
+   
 }
 
-
+myLibrary.forEach(book =>{
+    let cardsContainer = document.createElement('div');
+    let cardAuthor = document.createElement('div');
+    let cardTitle = document.createElement('div');
+    let cardPages = document.createElement('div');
+    let statusBtn = document.createElement('button');
+    let deleteBtn = document.createElement('button');
+    container.appendChild(cardsContainer);
+    cardsContainer.appendChild(cardAuthor);
+    cardsContainer.appendChild(cardTitle);
+    cardsContainer.appendChild(cardPages);
+    cardsContainer.appendChild(statusBtn);
+    cardsContainer.appendChild(deleteBtn);
+    cardsContainer.classList.add('cardsContainer');
+    cardAuthor.classList.add('card');
+    cardTitle.classList.add('card');
+    cardPages.classList.add('card');
+    statusBtn.classList.add('statusBtn');
+    deleteBtn.classList.add('deleteBtn');
+    cardAuthor.textContent = `Author: ${book.author}`;
+    cardTitle.textContent = `Title: ${book.title}`;
+    cardPages.textContent = `Number of pages: ${book.pages}`;
+    statusBtn.textContent = 'Read status';
+    deleteBtn.textContent = 'Delete'
+})
 
 function openForm(){
     document.getElementById("myForm").style.display = "block";

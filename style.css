@@ -7,17 +7,16 @@ amarilloB 243 255 147 */
 *{
     font-family: 'Patrick Hand', cursive;
 }
-
 body{
+    margin: 0;
     display: grid;
-    width: 100%;
-    height: 100%;
+    grid-template-rows: 1fr 3fr;
 }
 .header{
     display: grid;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    background-color: rgb(155, 162, 50);
     
 }
 .open-button{
@@ -26,28 +25,43 @@ body{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    height: 100px;
+    height: 80px;
     width: 300px;
     font-size: 25px;
     color: white;
 }
 .form-popup {
-    display: none
+    display: none;
+    
     
 }
 .form-container{
+    background-color: ;
     max-width: 300px;
     padding: 10px;
-    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    top:20px;
+    left: 520px;
+    row-gap: span;
 }
-
+#submit{
+    color: white;
+    background-color: rgb(246, 197, 195);
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+}
 #container{
-   background-color: rgb(155, 162, 50);
+   background-color:rgb(243 255 147) ;
+   position: relative;
    display: grid;
-   grid-template-columns: repeat(3, minmax(200px, 350px));
+   grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
    justify-content: space-around;
    gap: 10px;
-   height: 1000px;
+   height:
 }
 .cardsContainer{
     border-radius: 5px;
