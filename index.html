@@ -14,8 +14,9 @@
     <div class="header">
     <button class="open-button" id="addBook">Add Book</button>
     </div>
-    <div id="container">
-    <div class="form-popup" id="myForm">
+
+   
+     <div class="form-popup" id="myForm">
         <form action="" class="form-container">
             <h2>Book information</h2>
             <div>
@@ -32,17 +33,13 @@
                 <input type="number" name="pages" id="pages" minlength="1" maxlength="10000" required>
             </div>
             <div>
-                <h3>Have you read it?</h3>
-                <label for="true">Yes</label>
-                <input type="radio" name="status" id="true" checked>
-                <label for="false">No</label>
-                <input type="radio" name="status" id="false">
+                <label for="readStatus">Have you read it?</label>
+                <input type="checkbox" name="readStatus" id="readStatus" checked>
             </div>
             <button type="submit" id="submit">Submit</button>
         </form>
-    </div>
-    
-    </div>
+      </div>
+      <div id="container"></div>
     <script src="./script.js"></script>
 </body>
 </html>
