@@ -88,7 +88,9 @@ myLibrary.forEach(book =>{
       });
 
     deleteBtn.addEventListener('click', function() {
-        console.log('hola');
+        let indexD = myLibrary.indexOf(book);
+        myLibrary.splice(indexD, 1);
+        cardsContainer.remove(book);
       });
 })
 
